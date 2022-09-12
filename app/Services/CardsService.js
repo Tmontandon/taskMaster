@@ -19,6 +19,7 @@ class CardsService {
     // console.log('hey');
     saveState('cards', appState.cards)
     console.log(appState.cards);
+    appState.emit('cards')
   }
 
   // getElem(id) {

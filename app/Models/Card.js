@@ -16,17 +16,16 @@ export class Card {
     // debugger
     this.id = data.id || generateId()
     this.name = data.name
-    this.color = '5a50f2'
+    this.color = data.color
     // this.color = data.color || document.getElementById('color')
   }
 
   get Template() {
     // debugger
     return `
-    <style>
-    .yo {background-color: #${this.color};}
-    </style>
-    <div class="col-md-4 mx-1 mb-4 yo p-2 px-3 rounded">
+    
+    <div class="col-md-4 mx-1 mb-4 yo p-2 px-3 rounded"
+    style="background-color:${this.color}">
     <div class="d-flex justify-content-end">
     <i onclick="app.cardsController.removeCard('${this.id}')" class="mdi mdi-close text-danger selectable rounded" title="Get Outta here"></i>
     </div>
@@ -84,6 +83,11 @@ export class Card {
     let end = total
     return end
   }
+
+  //   get Color(){
+  // let w = appState.cards.filter
+  //     return color
+  //   }
 
 }
 
