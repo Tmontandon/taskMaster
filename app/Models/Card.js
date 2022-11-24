@@ -23,33 +23,30 @@ export class Card {
   get Template() {
     // debugger
     return `
-    
-    <div class="col-md-4 mx-1 mb-4 yo p-2 px-3 rounded"
+    <div class="col-md-4 mx-1 mb-4 yo p-2 px-3 rounded font-2 elevation-2" 
     style="background-color:${this.color}">
     <div class="d-flex justify-content-end">
-    <i onclick="app.cardsController.removeCard('${this.id}')" class="mdi mdi-close text-danger selectable rounded" title="Get Outta here"></i>
+      <i onclick="app.cardsController.removeCard('${this.id}')" class="mdi mdi-close text-danger selectable rounded" title="Get Outta here"></i>
     </div>
-          <div class=" justify-content-center text-center">
-            <div class="bg-light text-dark p-1 mx-1 rounded"><p class="m-1">${this.name}</p></div>
-            <span class="bg-light text-dark p-1 rounded-bottom">
-
-            ${this.Uncompleted}/${this.Total}
-
-            </span>
-          </div>
-            <div class="">
-            <div id="tasks">
-            ${this.Tasks}
-            </div>
-            <form onsubmit="app.tasksController.createTasks('${this.id}')" class="py-2">
-              <div class="form-group d-flex justify-content-center p-1">
-                <input class="form-control square-right" type="text" name="task" placeholder="Task" required />
-                <label for="task" class="visually-hidden">Task</label>
-                <button class="btn btn-primary square-left" type="submit"><i class="mdi mdi-plus"></i></button>
-              </div>
-            </form>
-            </div>
+    <div class="justify-content-center text-center">
+      <div class="bg-light text-dark p-1 mx-1 rounded"><p class="m-1 title">${this.name}</p></div>
+      <span class="bg-light text-dark p-1 rounded-bottom">
+      ${this.Uncompleted}/${this.Total}
+      </span>
+    </div>
+      <div class="">
+      <div id="tasks">
+      ${this.Tasks}
+      </div>
+      <form onsubmit="app.tasksController.createTasks('${this.id}')" class="py-2">
+        <div class="form-group d-flex justify-content-center p-1">
+          <input class="form-control square-right" type="text" name="task" placeholder="Task" required />
+          <label for="task" class="visually-hidden">Task</label>
+          <button class="btn btn-primary square-left" type="submit"><i class="mdi mdi-plus"></i></button>
         </div>
+      </form>
+      </div>
+  </div>
     `
   }
 

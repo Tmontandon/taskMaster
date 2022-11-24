@@ -14,8 +14,8 @@ export class Task {
 
   get Template() {
     return `
-      <div class="d-flex justify-content-between">
-        <div class="mt-2 p-1 w-100 bg-light Iamsomad">
+      <div class="d-flex justify-content-between ">
+        <div class="mt-2 p-1 w-100 bg-light Iamsomad rounded">
           <input onchange="app.tasksController.toggleTaskCompletion('${this.id}')" class="ms-2" type="checkbox" ${this.complete ? 'checked' : ''}>
         <i onclick="app.tasksController.removeTask('${this.id}')" class="mdi mdi-close text-danger selectable rounded" title="Get Outta here"></i>
           ${this.task}
